@@ -1,0 +1,1 @@
+This Java project prints Hello World! in a fun way where the program prints the string with the initial character until it prints the full string and then prints back until there is only one character left

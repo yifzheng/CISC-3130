@@ -72,6 +72,7 @@ public class readFile {
 			}
 			System.out.println();
 		}
+		System.out.println();
 		List<Artist> newList = arrToList(array); // converts the 2D array to a new list storing only the values set to store above
 		File file = new File("Weekly_Spotify_Rankings_08282020.csv"); // creates a new csv file
 		FileWriter csvWriter = new FileWriter(file); // makes a filewriter object to write the data from the list to a new csv file
@@ -86,19 +87,16 @@ public class readFile {
 	// this method sets up a 2d array arranging their names, their songs, and the number of times they've appeared on the ranking
 	public static String[][] countArtist(List<Artist> list){
 		List<String> newLst = new ArrayList<>();
-		for (Artist x : list) {
-			if (!newLst.contains(x.getName())) { // if the list does not contain the element from list, the add it to the new list
-				newLst.add(x.getName());
+		for (int i = 1; i < list.size(); i++) {
+			if (!newLst.contains(list.get(i).getName())) { // if the list does not contain the element from list, the add it to the new list
+				newLst.add(list.get(i).getName());
 			}
 		}
 		String[][] array = new String[newLst.size()][3];
-		array[0][0] = "Artist";
-		array[0][1] = " Track Names";
-		array[0][2] = " Number of Appearances on the ranking";
-		for (int i = 1; i < newLst.size(); i++) {
-			array[i][0] = newLst.get(i);
-			array[i][1] = getSongNames(newLst.get(i), list);
-			array[i][2] = Integer.toString(countDuplicates(newLst.get(i), list));
+		for (int i = 0; i < newLst.size(); i++) {
+			array[i][0] = "Artist: " + newLst.get(i) + " ";
+			array[i][1] = "Song/Songs By Artist:" + getSongNames(newLst.get(i), list);
+			array[i][2] = "Appearances in Spotify Ranking: " + Integer.toString(countDuplicates(newLst.get(i), list));
 		}
 		return array;
 	}
@@ -170,5 +168,6 @@ public class readFile {
 			}
 			System.out.println();
 		}
+		System.out.println();
 	}
 }

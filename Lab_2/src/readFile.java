@@ -59,7 +59,7 @@ public class readFile {
 			//System.out.print(x.toString());
 			//System.out.println("");
 		//}
-		String[][] array = countArtist(lst);
+		String[][] array = countArtist(lst); // maked a 2d Array for the list made from the method to store artist, song name, and # of appearances
 		//prints out content of the 2d Array
 		for (int i = 0; i < array.length; i++) {
 			for (int j = 0; j < array[0].length; j++) {
@@ -72,7 +72,7 @@ public class readFile {
 			}
 			System.out.println();
 		}
-		List<Artist> newList = arrToList(array);
+		List<Artist> newList = arrToList(array); // converts the 2D array to a new list storing only the values set to store above
 		File file = new File("Weekly_Spotify_Rankings_08282020.csv"); // creates a new csv file
 		FileWriter csvWriter = new FileWriter(file); // makes a filewriter object to write the data from the list to a new csv file
 		for (Artist x : newList) {
@@ -134,7 +134,7 @@ public class readFile {
 		}
 		return newList;
 	}
-	
+	// prints the file based on the file written in main method
 	public static void printFile(File file) throws IOException{
 		Scanner sc = new Scanner(new BufferedReader(new FileReader(file))); 
 		String line = "";
@@ -170,6 +170,5 @@ public class readFile {
 			}
 			System.out.println();
 		}
-		
 	}
 }

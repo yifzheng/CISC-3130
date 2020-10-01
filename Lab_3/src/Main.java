@@ -42,7 +42,7 @@ public class Main {
 		FileWriter csvWriter = new FileWriter(file); // makes a filewriter object to write the data from the list to a new csv file
 		//for every artist, use toString method to print out all necessary information
 		while (current != null) {
-			csvWriter.write("Artist: " + current.name + ", Song(s): "+ current.song + "\n"); 
+			csvWriter.write("Stage Name: " + current.name + ", Song(s): "+ current.song + "\n"); 
 			current = current.next;
 		}
 		csvWriter.flush(); // flush fileWriter

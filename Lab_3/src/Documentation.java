@@ -1,6 +1,6 @@
 /*
 public class Documentation {
-	Documentation of Lab_3:
+	Documentation of Lab_3: (PLEASE NOTE THAT CODE IN THIS PROJECT WORKS FOR THE FILE PROVIDED IN MAIN CLASS. WEBSITE TO FILE PROVIDED IN COMMENT)
 	The purpose of this lab was to input a csv file, read the information, manipulate such information and output the informatation into the desired format through a 
 	linked list.
 	An Artist class was made with variables Name and Song to store the artist information I desired in the csv file. Two different constructors were made, one without 

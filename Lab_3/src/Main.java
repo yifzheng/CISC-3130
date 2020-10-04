@@ -22,9 +22,9 @@ public class Main {
 			line = sc.nextLine(); // set the variable equal the next line from file
 			String[] arr = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1); // split the line into parts for storing
 			for (int i = 0; i < arr.length; i++) {
-				if (arr[i].charAt(0) == ('"')) {
-					arr[i] = arr[i].substring(1, arr[i].length() - 1);
-				}
+				if (arr[i].charAt(0) == ('"')) { // if the string has quotations
+					arr[i] = arr[i].substring(1, arr[i].length() - 1); // remove the quotations
+ 				}
 			}
 			artist.setSong(arr[1]); // sets the name of the song
 			artist.setName(arr[2]); // sets the name of the artist;

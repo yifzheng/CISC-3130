@@ -9,7 +9,7 @@ import java.io.*;
 
 public class Main {
 	public static void main(String[] args) throws IOException{
-		String fileLocation = "Y:\\Downloads\\regional-global-weekly-2020-09-18--2020-09-25.csv"; //https://spotifycharts.com/regional/global/weekly/2020-08-21--2020-08-28
+		String fileLocation = "Y:\\Downloads\\regional-global-weekly-2020-09-18--2020-09-25.csv"; //https://spotifycharts.com/regional/global/weekly/2020-09-18--2020-09-25
 		//reads the file line by line
 		String line = "";
 		// scanner to read the lines from file stream
@@ -36,14 +36,14 @@ public class Main {
 		lst.printList(lst.head); // print list to check if methods work as intended
 		System.out.println(" ");
 		
-		lst.reverseList(lst.head);
-		Artist current = lst.head;
+		lst.reverseList(lst.head); // reverse list
+		Artist current = lst.head; // set an Artist object to head of the reversed list
 		File file = new File("ArtistsSorted-WeekOf-09-18-2020--09-25-2020.csv"); // creates a new csv file
 		FileWriter csvWriter = new FileWriter(file); // makes a filewriter object to write the data from the list to a new csv file
 		//for every artist, use toString method to print out all necessary information
-		while (current != null) {
-			csvWriter.write("Stage Name: " + current.name + ", Song(s): "+ current.song + "\n"); 
-			current = current.next;
+		while (current != null) { // while the object is not null
+			csvWriter.write("Stage Name: " + current.name + ", Song(s): "+ current.song + "\n"); // use the csvWriter to write the artist and songs into each line
+			current = current.next; // set current to next object
 		}
 		csvWriter.flush(); // flush fileWriter
 		csvWriter.close(); // close fileWriter

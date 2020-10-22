@@ -51,12 +51,18 @@ public class Documentation {
 	 * ---> String[] of file locations
 	 * ---> MyQueue constructor is called with fileLocation as the argument
 	 * ---> global list is the sorted, duplciates removed
-	 * ---> the list after being sorted and duplicates removed is printed to make sure methods work as intended
-	 * ---> makeFile(list) is called;
-	 * ---> I declared i = 1000 and put listenToSong in a while loop that cancels once i reaches 0
-	 * ---> playList(list) is called to make a file of the remaining playlist
-	 * ---> lst.history.lastListened() is used to check if the method works as intended
-	 * ---. playListHistory(list) is then called to make a file of the playlist history
-	 * 
+	 * OPTIONAL---> the list after being sorted and duplicates removed is printed to make sure methods work as intended
+	 * OPTIONAL---> makeFile(list) is called;
+	 * OPTIONAL---> I declared i = 1000 and put listenToSong in a while loop that cancels once i reaches 0
+	 * OPTIONAL---> playList(list) is called to make a file of the remaining playlist
+	 * OPTIONAL---> lst.history.lastListened() is used to check if the method works as intended
+	 * OPTIONAL---> playListHistory(list) is then called to make a file of the playlist history
+	 * ---> console input interaction
+	 * ---> compile to start
+	 * ---> will ask to start playlist
+	 * ---> prints out top of playlist
+	 * ---> asks you to continue, depending on input will result in different outcomes.
+	 * ---> if asked to start and input no, scanner is closed
+	 * ---> of asked to start and else is inputted, there is option to print full playlist and then closes scanner
 	 */
 }

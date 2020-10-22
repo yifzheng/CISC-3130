@@ -3,6 +3,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 import java.io.*;
@@ -10,7 +11,14 @@ import java.io.*;
 public class MyQueue {
 	
 	static PlayList lst = new PlayList();
-
+	final static String[] fileLocation = {"Y:\\Downloads\\regional-global-weekly-2020-06-26--2020-07-03.csv", "Y:\\Downloads\\regional-global-weekly-2020-07-03--2020-07-10.csv",
+			"Y:\\Downloads\\regional-global-weekly-2020-07-10--2020-07-17.csv", "Y:\\Downloads\\regional-global-weekly-2020-07-17--2020-07-24.csv",
+			"Y:\\Downloads\\regional-global-weekly-2020-07-24--2020-07-31.csv", "Y:\\Downloads\\regional-global-weekly-2020-07-31--2020-08-07.csv",
+			"Y:\\Downloads\\regional-global-weekly-2020-08-07--2020-08-14.csv", "Y:\\Downloads\\regional-global-weekly-2020-08-14--2020-08-21.csv",
+			"Y:\\Downloads\\regional-global-weekly-2020-08-21--2020-08-28.csv", "Y:\\Downloads\\regional-global-weekly-2020-08-28--2020-09-04.csv",
+			"Y:\\Downloads\\regional-global-weekly-2020-09-04--2020-09-11.csv", "Y:\\Downloads\\regional-global-weekly-2020-09-11--2020-09-18.csv",
+			"Y:\\Downloads\\regional-global-weekly-2020-09-18--2020-09-25.csv", "Y:\\Downloads\\regional-global-weekly-2020-09-25--2020-10-02.csv",
+			"Y:\\Downloads\\regional-global-weekly-2020-10-02--2020-10-09.csv"};
 	public MyQueue(String[] fileLocation) throws IOException{
 		for (String x : fileLocation) {
 			String line = "";
@@ -76,20 +84,14 @@ public class MyQueue {
 	}
 	public static void main(String[] args) throws IOException {
 		
-		String[] fileLocation = {"Y:\\Downloads\\regional-global-weekly-2020-06-26--2020-07-03.csv", "Y:\\Downloads\\regional-global-weekly-2020-07-03--2020-07-10.csv",
-				"Y:\\Downloads\\regional-global-weekly-2020-07-10--2020-07-17.csv", "Y:\\Downloads\\regional-global-weekly-2020-07-17--2020-07-24.csv",
-				"Y:\\Downloads\\regional-global-weekly-2020-07-24--2020-07-31.csv", "Y:\\Downloads\\regional-global-weekly-2020-07-31--2020-08-07.csv",
-				"Y:\\Downloads\\regional-global-weekly-2020-08-07--2020-08-14.csv", "Y:\\Downloads\\regional-global-weekly-2020-08-14--2020-08-21.csv",
-				"Y:\\Downloads\\regional-global-weekly-2020-08-21--2020-08-28.csv", "Y:\\Downloads\\regional-global-weekly-2020-08-28--2020-09-04.csv",
-				"Y:\\Downloads\\regional-global-weekly-2020-09-04--2020-09-11.csv", "Y:\\Downloads\\regional-global-weekly-2020-09-11--2020-09-18.csv",
-				"Y:\\Downloads\\regional-global-weekly-2020-09-18--2020-09-25.csv", "Y:\\Downloads\\regional-global-weekly-2020-09-25--2020-10-02.csv",
-				"Y:\\Downloads\\regional-global-weekly-2020-10-02--2020-10-09.csv"};
 		MyQueue data = new MyQueue(fileLocation);
 		
 		lst.sort(lst.head);// sort the linked list
 		lst.removeDup();
-		lst.printList(lst.head); // print list to check if methods work as intended
-		makeFile(lst); // makes file of entire playlist
+		
+		
+		//lst.printList(lst.head); // print list to check if methods work as intended
+		/*makeFile(lst); // makes file of entire playlist
 		System.out.println(" ");
 		
 		int i = 1000;
@@ -103,7 +105,70 @@ public class MyQueue {
 		System.out.println(lst.history.lastListened());
 		playListHistory(lst);
 		System.out.println(" ");
-		lst.printList(lst.head);
+		lst.printList(lst.head);*/
+		Scanner sc = new Scanner(System.in);
 		
+		System.out.println("Start Playlist: yes or no? else?");
+		
+		String line = sc.nextLine();
+		if (line.equals("yes")){
+			System.out.println("Now playing: " + lst.listenToSong());
+			System.out.println(" "); // space for better visual in console
+			while (!line.equals("end")) {
+				System.out.println("Next Song: yes or no? --> /help for options");
+				line = sc.nextLine();
+				System.out.println(" "); // space for better visual in console
+				switch(line) {
+					case "yes": {
+						System.out.println("Now playing: " + lst.listenToSong());
+						System.out.println(" "); // space for better visual in console
+						break;
+					}
+					case "no" : {
+						break;
+					}
+					case "print playlist" : {
+						lst.printList(lst.head);
+						System.out.println(" "); // space for better visual in console
+						break;
+					}
+					case "/help" : {
+						System.out.println("Commands: end, history, previous track, print playlist");
+						System.out.println(" "); // space for better visual in console
+						break;
+					}
+					case "history" : {
+						lst.history.printList(lst.history.head);
+						System.out.println(" "); // space for better visual in console
+						break;
+					}
+					case "previous track" : {
+						Artist temp = lst.history.lastListened();
+						System.out.println(temp);
+						System.out.println(" "); // space for better visual in console
+						break;
+					}
+				}
+			}
+			System.out.println("Thank you for reading the playlist");
+		}
+		else if (line.equals("else")) {
+			System.out.println("See full play list? yes/no");
+			line = sc.nextLine();
+			if (line.equals("yes")) {
+				lst.printList(lst.head);
+			}
+			if (line.equals("no")){
+				sc.close();
+			}
+			else {
+				System.out.println("I'm sorry please input command again!");
+				System.out.println(" "); // space for better visual in console
+			}
+		}
+		else if (line.equals("no")) {
+			sc.close();
+		}
+		sc.close();
 	}
 }

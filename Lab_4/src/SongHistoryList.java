@@ -33,11 +33,9 @@ public class SongHistoryList {
 			if (head == null) {
 				return;
 			}
+			System.out.println(head.song + " by " + head.name);
 			printList(head.next);
-			
-			System.out.println(head.song);
 	  }
-	  
 	 
 	  public Artist lastListened(){
 		  if (head == null) {
@@ -45,7 +43,7 @@ public class SongHistoryList {
 		  }
 		  // make a temporary object to store first song
 		  Artist current = getLastNode();
-		  // set root node to its next node;
+
 		  // return temp node
 		  return current;
 	  }

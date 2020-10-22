@@ -1,7 +1,7 @@
 
 public class Documentation {
 	/*
-	 * NOTICE: files used in this lab are subjected to change by the website. The files should be included with the lab. Otherwise include code into MyQueue.java in lines 19 and 20 --> fileScanner.nextLine();
+	 * NOTICE: files used in this lab are subjected to change by the website. *The files should be included with the lab*. Otherwise include code into MyQueue.java in lines 19 and 20 --> fileScanner.nextLine();
 	 * 
 	 * General code of this lab is based on Lab 3. 
 	 * 
@@ -56,7 +56,10 @@ public class Documentation {
 	 * ---> I declared i = 1000 and put listenToSong in a while loop that cancels once i reaches 0
 	 * ---> playList(list) is called to make a file of the remaining playlist
 	 * ---> lst.history.lastListened() is used to check if the method works as intended
-	 * ---. playListHistory(list) is then called to make a file of the playlist history
+	 * ---> playListHistory(list) is then called to make a file of the playlist history
 	 * 
+	 *>>>playlist-history-of-fiscal-quarter-playlist-2020-06-26--2020-10-09.csv<<< csv of playlist history
+	 *>>>remaining-fiscal-quarter-playlist-2020-06-26--2020-10-09.csv<<< remaining playlist
+	 *>>>total-fiscal-quarter-playlist-2020-06-26--2020-10-09.csv<<< total playlist from all files
 	 */
 }

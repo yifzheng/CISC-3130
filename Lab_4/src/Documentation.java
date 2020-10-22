@@ -1,7 +1,7 @@
 
 public class Documentation {
 	/*
-	 * NOTICE: files used in this lab are subjected to change by the website. The files should be included with the lab. Otherwise include code into MyQueue.java in lines 19 and 20 --> fileScanner.nextLine();
+	 * NOTICE: files used in this lab are subjected to change by the website. *The files should be included with the lab*. Otherwise include code into MyQueue.java in lines 19 and 20 --> fileScanner.nextLine();
 	 * 
 	 * General code of this lab is based on Lab 3. 
 	 * 
@@ -51,6 +51,7 @@ public class Documentation {
 	 * ---> String[] of file locations
 	 * ---> MyQueue constructor is called with fileLocation as the argument
 	 * ---> global list is the sorted, duplciates removed
+<<<<<<< HEAD
 	 * OPTIONAL---> the list after being sorted and duplicates removed is printed to make sure methods work as intended
 	 * OPTIONAL---> makeFile(list) is called;
 	 * OPTIONAL---> I declared i = 1000 and put listenToSong in a while loop that cancels once i reaches 0
@@ -64,5 +65,17 @@ public class Documentation {
 	 * ---> asks you to continue, depending on input will result in different outcomes.
 	 * ---> if asked to start and input no, scanner is closed
 	 * ---> of asked to start and else is inputted, there is option to print full playlist and then closes scanner
+=======
+	 * ---> the list after being sorted and duplicates removed is printed to make sure methods work as intended
+	 * ---> makeFile(list) is called;
+	 * ---> I declared i = 1000 and put listenToSong in a while loop that cancels once i reaches 0
+	 * ---> playList(list) is called to make a file of the remaining playlist
+	 * ---> lst.history.lastListened() is used to check if the method works as intended
+	 * ---> playListHistory(list) is then called to make a file of the playlist history
+	 * 
+	 *>>>playlist-history-of-fiscal-quarter-playlist-2020-06-26--2020-10-09.csv<<< csv of playlist history
+	 *>>>remaining-fiscal-quarter-playlist-2020-06-26--2020-10-09.csv<<< remaining playlist
+	 *>>>total-fiscal-quarter-playlist-2020-06-26--2020-10-09.csv<<< total playlist from all files
+>>>>>>> 7c9eb7dcace74f30e1f2d534a9f3ca2b6464e673
 	 */
 }

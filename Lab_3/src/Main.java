@@ -9,7 +9,7 @@ import java.io.*;
 
 public class Main {
 	public static void main(String[] args) throws IOException{
-		String fileLocation = "Y:\\Downloads\\regional-global-weekly-2020-09-18--2020-09-25.csv"; //https://spotifycharts.com/regional/global/weekly/2020-08-21--2020-08-28
+		String fileLocation = "Y:\\Downloads\\regional-global-weekly-2020-09-18--2020-09-25.csv"; //https://spotifycharts.com/regional/global/weekly/2020-09-18--2020-09-25
 		//reads the file line by line
 		String line = "";
 		// scanner to read the lines from file stream
@@ -22,9 +22,9 @@ public class Main {
 			line = sc.nextLine(); // set the variable equal the next line from file
 			String[] arr = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1); // split the line into parts for storing
 			for (int i = 0; i < arr.length; i++) {
-				if (arr[i].charAt(0) == ('"')) {
-					arr[i] = arr[i].substring(1, arr[i].length() - 1);
-				}
+				if (arr[i].charAt(0) == ('"')) { // if the string has quotations
+					arr[i] = arr[i].substring(1, arr[i].length() - 1); // remove the quotations
+ 				}
 			}
 			artist.setSong(arr[1]); // sets the name of the song
 			artist.setName(arr[2]); // sets the name of the artist;
@@ -36,14 +36,14 @@ public class Main {
 		lst.printList(lst.head); // print list to check if methods work as intended
 		System.out.println(" ");
 		
-		lst.reverseList(lst.head);
-		Artist current = lst.head;
+		lst.reverseList(lst.head); // reverse list
+		Artist current = lst.head; // set an Artist object to head of the reversed list
 		File file = new File("ArtistsSorted-WeekOf-09-18-2020--09-25-2020.csv"); // creates a new csv file
 		FileWriter csvWriter = new FileWriter(file); // makes a filewriter object to write the data from the list to a new csv file
 		//for every artist, use toString method to print out all necessary information
-		while (current != null) {
-			csvWriter.write("Stage Name: " + current.name + ", Song(s): "+ current.song + "\n"); 
-			current = current.next;
+		while (current != null) { // while the object is not null
+			csvWriter.write("Stage Name: " + current.name + ", Song(s): "+ current.song + "\n"); // use the csvWriter to write the artist and songs into each line
+			current = current.next; // set current to next object
 		}
 		csvWriter.flush(); // flush fileWriter
 		csvWriter.close(); // close fileWriter

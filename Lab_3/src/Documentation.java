@@ -1,6 +1,6 @@
 /*
 public class Documentation {
-	Documentation of Lab_3:
+	Documentation of Lab_3: (PLEASE NOTE THAT CODE IN THIS PROJECT WORKS FOR THE FILE PROVIDED IN MAIN CLASS. WEBSITE TO FILE PROVIDED IN COMMENT)
 	The purpose of this lab was to input a csv file, read the information, manipulate such information and output the informatation into the desired format through a 
 	linked list.
 	An Artist class was made with variables Name and Song to store the artist information I desired in the csv file. Two different constructors were made, one without 
@@ -22,7 +22,7 @@ public class Documentation {
 	to reference2.next.next. Then the memeory is emptied. If they are not equal then reference two is set to reference2.next. outside the inner while loop, reference1 is 
 	set to reference1.next.
 
-	In the main class, a bufferedreader is amde to read the information from a file. A scanner is made to read the information from the bufferedreader. Each line is taken
+	In the main class, a bufferedreader is made to read the information from a file. A scanner is made to read the information from the bufferedreader. Each line is taken
 	from the file and split into a String[] array to store the information. An artist object is made and the desired inforamtion is set to the artist object and the object 
 	is pushed to the already made ArtistList. The list is then sorted and duplicates removed. The list is then reversed and a new file is made and I take each node in the 
 	reversed list to write it into the file. 

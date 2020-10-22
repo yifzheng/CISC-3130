@@ -44,7 +44,7 @@ public class MyQueue {
 		FileWriter csvWriter = new FileWriter(file); // makes a filewriter object to write the data from the list to a new csv file
 		//for every artist, use toString method to print out all necessary information
 		while (current != null) {
-			csvWriter.write(current.toString()); 
+			csvWriter.write(current.toString() + "\n"); 
 			current = current.next;
 		}
 		csvWriter.flush(); // flush fileWriter
@@ -56,7 +56,7 @@ public class MyQueue {
 		FileWriter csvWriter = new FileWriter(file); // makes a filewriter object to write the data from the list to a new csv file
 		//for every artist, use toString method to print out all necessary information
 		while (current != null) {
-			csvWriter.write(current.toString()); 
+			csvWriter.write(current.toString() + "\n"); 
 			current = current.next;
 		}
 		csvWriter.flush(); // flush fileWriter
@@ -68,7 +68,7 @@ public class MyQueue {
 		FileWriter csvWriter = new FileWriter(file); // makes a filewriter object to write the data from the list to a new csv file
 		//for every artist, use toString method to print out all necessary information
 		while (current != null) {
-			csvWriter.write(current.toString()); 
+			csvWriter.write(current.toString() + "\n"); 
 			current = current.next;
 		}
 		csvWriter.flush(); // flush fileWriter

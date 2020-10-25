@@ -29,7 +29,7 @@ public class Artist implements Comparable<Artist> {
 	}
 }
 
-class PlayList extends LinkedList{
+class PlayList{
 	SongHistoryList history = new SongHistoryList();
 	Artist head; // Artist to head of the list
 	Artist sorted;
@@ -98,7 +98,7 @@ class PlayList extends LinkedList{
 		  // set root node to its next node;
 		  head = head.next;
 		  // adds the song to the song history list
-		  history.append(current);
+		  history.push(current);
 		  // return temp node
 		  return current;
 	  } 

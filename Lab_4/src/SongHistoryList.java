@@ -1,48 +1,52 @@
 
 public class SongHistoryList {
-	  Artist head;
+	  Artist first;
 	  public SongHistoryList(){
-		  head = null;
+		  first = null;
 	  }
 	  
 	  public boolean isEmpty() {
-		  return head == null;
+		  return first == null;
 	  }
-	  public void append(Artist s){
-			// if the head is null, then the object in the parameter becomes the tail/last object in linked list
-			if (isEmpty()) {
-				head = s;
-				head.next = null;
+	  public void push(Artist obj) {
+			// if the first is null, then the object in the parameter becomes the tail/lst object in linked list
+			if (first == null) {
+				first = obj;
+				first.next = null;
 			}
-			// else a temp variable is made to store the object and obj is set to head 
+			// else a temp variable is made to store the object and obj is set to first 
 			else {
-				Artist lastNode = getLastNode();
-				lastNode.next = s;
-				s.next = null;
+				Artist temp = obj;
+				temp.next = first;
+				first = temp;
 			}
+	  }
+	  public void pop() { // removes top object of stack without returning it
+		  first = first.next;
 	  }
 	  public Artist getLastNode() {
-			Artist temp = head;
+			Artist temp = first;
 			while (temp.next != null) {
 				temp = temp.next;
 			}
 			return temp;
 		}
 	  // prints the list
-	  public void printList(Artist head) {
-			if (head == null) {
+	  public void printList(Artist first) {
+			if (first == null) {
 				return;
 			}
-			System.out.println(head.song + " by " + head.name);
-			printList(head.next);
+			System.out.println(first.song + " by " + first.name);
+			Artist current = first.next;
+			printList(current);
 	  }
 	 
 	  public Artist lastListened(){
-		  if (head == null) {
+		  if (first == null) {
 			  throw new IllegalArgumentException("List is empty");
 		  }
 		  // make a temporary object to store first song
-		  Artist current = getLastNode();
+		  Artist current = first;
 
 		  // return temp node
 		  return current;

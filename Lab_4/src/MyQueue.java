@@ -71,7 +71,7 @@ public class MyQueue {
 		csvWriter.close(); // close fileWriter
 	}
 	public static void playListHistory(PlayList list) throws IOException{
-		Artist current = list.history.head;
+		Artist current = list.history.first;
 		File file = new File("playlist-history-of-fiscal-quarter-playlist-2020-06-26--2020-10-09.csv"); // creates a new csv file
 		FileWriter csvWriter = new FileWriter(file); // makes a filewriter object to write the data from the list to a new csv file
 		//for every artist, use toString method to print out all necessary information
@@ -107,44 +107,44 @@ public class MyQueue {
 		System.out.println(" ");
 		lst.printList(lst.head);*/
 		Scanner sc = new Scanner(System.in);
-		
-		System.out.println("Start Playlist: yes or no? else?");
+
+		System.out.println("Start Playlist: y or n? else?");
 		
 		String line = sc.nextLine();
-		if (line.equals("yes")){
-			System.out.println("Now playing: " + lst.listenToSong());
+		if (line.equals("y")){
+			System.out.println("Now Playing: " + lst.listenToSong());
 			System.out.println(" "); // space for better visual in console
 			while (!line.equals("end")) {
-				System.out.println("Next Song: yes or no? --> /help for options");
+				System.out.println("Next Song: y or n? --> /h for options");
 				line = sc.nextLine();
 				System.out.println(" "); // space for better visual in console
 				switch(line) {
-					case "yes": {
-						System.out.println("Now playing: " + lst.listenToSong());
+					case "y": {
+						System.out.println("Now Playing: " + lst.listenToSong());
 						System.out.println(" "); // space for better visual in console
 						break;
 					}
-					case "no" : {
+					case "n" : {
 						break;
 					}
-					case "print playlist" : {
-						lst.printList(lst.head);
+					case "/h" : {
+						System.out.println("Commands: end, p(previous track), pr(int playlist)");
 						System.out.println(" "); // space for better visual in console
 						break;
 					}
-					case "/help" : {
-						System.out.println("Commands: end, history, previous track, print playlist");
-						System.out.println(" "); // space for better visual in console
-						break;
-					}
-					case "history" : {
-						lst.history.printList(lst.history.head);
-						System.out.println(" "); // space for better visual in console
-						break;
-					}
-					case "previous track" : {
+					case "p" : {
 						Artist temp = lst.history.lastListened();
-						System.out.println(temp);
+						if (temp.next != null) {
+							System.out.println("Now Playing: " + temp.next);
+							lst.history.pop();
+						}
+						
+						System.out.println(" "); // space for better visual in console
+						lst.push(temp);
+						break;
+					}
+					case "pr" : {
+						lst.printList(lst.head);
 						System.out.println(" "); // space for better visual in console
 						break;
 					}
@@ -153,12 +153,12 @@ public class MyQueue {
 			System.out.println("Thank you for reading the playlist");
 		}
 		else if (line.equals("else")) {
-			System.out.println("See full play list? yes/no");
+			System.out.println("See full play list? y/n");
 			line = sc.nextLine();
-			if (line.equals("yes")) {
+			if (line.equals("y")) {
 				lst.printList(lst.head);
 			}
-			if (line.equals("no")){
+			if (line.equals("n")){
 				sc.close();
 			}
 			else {
@@ -166,7 +166,7 @@ public class MyQueue {
 				System.out.println(" "); // space for better visual in console
 			}
 		}
-		else if (line.equals("no")) {
+		else if (line.equals("n")) {
 			sc.close();
 		}
 		sc.close();

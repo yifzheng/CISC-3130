@@ -6,6 +6,7 @@ public class Documentation {
 	 * General code of this lab is based on Lab 3. 
 	 * 
 	 * The purpose of this lab is to work with multiple input files. A fiscal quarter worth of csv files were used in this lab. Data from each file was extracted and placed into a global queue/linkedlist structure. 
+	 * LIST IS SORTED ALPHABETICALLY IGNORING CASE IN ASCENDING ORDER, THEREFORE {Apple, apricot, ARROUND} IS CONSIDERED SORTED IN ASCENDING ORDER
 	 * 
 	 * Artist.java EXPLAINED:
 	 * > The Artist class is the main class in the file. It has 2 variables, a node pointer, 2 different constructors, 2 set variable methods, a overridden comparable class, and one toString() method.
@@ -25,7 +26,7 @@ public class Documentation {
 	 * --> getLastNode() transverses through the list until it reaches the last unnull node in the list
 	 * --> printList(Artist head) prints the queue starting from head node
 	 * --> listenToSong() throws IllegalArgumentException if the list is empty. Else it remove the head node, adds it to history, and then returned
-	 * --> sort() and insert() are used to sort the linkedlist/queue
+	 * --> sort() and insert() are used to sort the linkedlist/queue -->SORTING ALGORITHM IGNORES CASE SO ALGORTIHM SORTS ALPHABETICALLY
 	 * --> removeDuplicates() remove duplicates of artist names and concatenates song names to 1 artist object
 	 * --> removeDup() --method used in this lab-- remove the duplicate artist names and their osngs if there are multiple. Since multiple files are used, it is assumed that there will be multiple instances of artist name with same
 	 * song appearing multiple times
@@ -59,13 +60,13 @@ public class Documentation {
 	 * OPTIONAL---> lst.history.lastListened() is used to check if the method works as intended
 	 * OPTIONAL---> playListHistory(list) is then called to make a file of the playlist history
 	 * ---> console input interaction
-	 * ---> compile to start
+	 * ---> COMPILE TO START 
 	 * ---> will ask to start playlist
 	 * ---> prints out top of playlist
 	 * ---> asks you to continue, depending on input will result in different outcomes.
 	 * ---> if asked to start and input no, scanner is closed
 	 * ---> of asked to start and else is inputted, there is option to print full playlist and then closes scanner
-=======
+<<<<<<< TAIL
 	 * ---> the list after being sorted and duplicates removed is printed to make sure methods work as intended
 	 * ---> makeFile(list) is called;
 	 * ---> I declared i = 1000 and put listenToSong in a while loop that cancels once i reaches 0
@@ -76,6 +77,5 @@ public class Documentation {
 	 *>>>playlist-history-of-fiscal-quarter-playlist-2020-06-26--2020-10-09.csv<<< csv of playlist history
 	 *>>>remaining-fiscal-quarter-playlist-2020-06-26--2020-10-09.csv<<< remaining playlist
 	 *>>>total-fiscal-quarter-playlist-2020-06-26--2020-10-09.csv<<< total playlist from all files
->>>>>>> 7c9eb7dcace74f30e1f2d534a9f3ca2b6464e673
 	 */
 }

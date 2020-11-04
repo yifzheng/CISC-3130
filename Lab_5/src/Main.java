@@ -63,7 +63,7 @@ public class Main {
 		// System.out.println(lst.root);
 		// System.out.println("BST of Playlist");
 		lst.inorderTranversal(); // tranverse BST inorder (NEEDS TO BE CALLED TO HAVE AN ARRAYLIST WITH VALUES)
-		// System.out.println(" ");
+		System.out.println(" ");
 		//System.out.println("Subtree of main BST");
 		lst.subset("Blinding Lights", "Pretty Savage"); // calls subset() to print out a subtree within range of two string arguments (NEEDS TO BE CALLED TO HAVE AN ARRAYLIST WITH VALUES)
 		
@@ -89,8 +89,8 @@ public class Main {
 														// new csv file
 		csvWriter.write("BST OF PLAYLIST" + "\n");
 		// for every artist, use toString method to print out all necessary information
-		for (Song x : list) {
-			csvWriter.write(x + "\n");
+		for (int i = 0; i < list.size(); i++) {
+			csvWriter.write(list.get(i) + "\n");
 		}
 		csvWriter.flush(); // flush fileWriter
 		csvWriter.close(); // close fileWriter

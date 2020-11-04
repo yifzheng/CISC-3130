@@ -59,6 +59,7 @@ public class Documentation {
 	 * we remove them. Afterwards we add arr[1], arr[2]. arr[3] to their perspective arraylist. Once all the files are read, we close all methods used to read the files.
 	 * -> makeBST(ArrayList<String> songLst, ArrayList<String> artistLst, ArrayList<Integer> streamLst) function is called to make a BST from the arraylists
 	 * -> lines 63-68 are optional code used to test whether the BST has values and is printed properly in order
+	 * ->!!!!Lines 65 and 68 needs to be called inorder for the Arraylists in SongPlaylist to have values for output file
 	 * -> In line 68, the subset of the BST is printed.
 	 * -> makeBSTFile() function is called to make an output file of BST
 	 * -> makeSUBtreeFile() function is called to maek an output file of subtree form the BST

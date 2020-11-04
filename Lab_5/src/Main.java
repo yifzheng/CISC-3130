@@ -31,7 +31,7 @@ public class Main {
 				"Y:\\Downloads\\regional-global-weekly-2020-09-11--2020-09-18.csv",
 				"Y:\\Downloads\\regional-global-weekly-2020-09-18--2020-09-25.csv",
 				"Y:\\Downloads\\regional-global-weekly-2020-09-25--2020-10-02.csv",
-				"Y:\\Downloads\\regional-global-weekly-2020-10-02--2020-10-09.csv" }; 
+				"Y:\\Downloads\\regional-global-weekly-2020-10-02--2020-10-09.csv" };
 
 		ArrayList<String> songList = new ArrayList<>(); // an array list to store all the song tracks
 		ArrayList<String> artistList = new ArrayList<>(); // an array list to store all arist names
@@ -43,7 +43,6 @@ public class Main {
 			while (sc.hasNextLine()) { // while the scanner has a line to read
 				String line = sc.nextLine(); // line taken from file
 				String[] array = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1); // split the line into parts for
-																						// Song variable declaration
 				if (array.length > 1) { // checks if the array size is greater than 1 if not don't set any values to the
 										// Song object
 					for (int i = 0; i < array.length; i++) {
@@ -63,10 +62,11 @@ public class Main {
 
 		// System.out.println(lst.root);
 		// System.out.println("BST of Playlist");
-		// lst.inorderTranversal(); // tranverse BST inorder
-		//System.out.println(" ");
-		System.out.println("Subtree of main BST");
-		lst.subset("Blinding Lights", "Pretty Savage"); // calls subset() to print out a subtree within range of two string arguments
+		lst.inorderTranversal(); // tranverse BST inorder (NEEDS TO BE CALLED TO HAVE AN ARRAYLIST WITH VALUES)
+		// System.out.println(" ");
+		//System.out.println("Subtree of main BST");
+		lst.subset("Blinding Lights", "Pretty Savage"); // calls subset() to print out a subtree within range of two string arguments (NEEDS TO BE CALLED TO HAVE AN ARRAYLIST WITH VALUES)
+		
 		makeBSTFile(lst.BST); // calls function to make an ouput file of the BST inorder
 		makeSubtreeFile(lst.branch); // calls function to make an output file from the subset() method
 	}

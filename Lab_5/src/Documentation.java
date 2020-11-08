@@ -24,14 +24,23 @@ public class Documentation {
 	 * output to a text file.
 	 * 
 	 * 
-	 * ```java Set sample1 = myPlayList.subSet("Jingle Bells", "Merry Christmas");
+	 * ```java Set sample1 = myPlayList.subSet("Jingle Bells", "Merry Christmas"); only prints noes within range
 	 * ```
+	 * ## Code Decription
+	 * 
+	 * Code is compiled in Main.java and run on a console. For analysis of the csv Spotify ranking files, you may put their location in the string[] fileLocation. 
+	 * Line 61, will make take the information from the files and insert them into an implementation of a Binary Search Tree. 
+	 * Line 65, calls the method from SongPlaylist class to traverse the BSt in order and print out the nodes
+	 * Line 68, will call a method to print out nodes within the range set in the arguments in order. (It matters not if the songs/strings are part of the BST as they are limiters)
+	 * Lines 70 and 71 calls functions to write out a file representing the in order traversal of the BST and the in order traversal of the nodes from the subset method
+	 * 
+	 * 
 	 * 
 	 * Explanation for Song.java 
 	 * -> 4 variables, two string, 2 integer to store track name, artist name, number of streams for song, and the average number of streams throughout the files 
 	 * -> two Song nodes to point to left and right side of the BST
 	 * -> a null Song constructor to set all variables and nodes null or 0
-	 * -> a Song() constructor with songname, artistname, and streamCOunt arguments
+	 * -> a Song() constructor with songName, artistName, and streamCOunt arguments
 	 * -> There is a set and get method for every variable except artistAverage
 	 * -> setArtistAverage(Song obj) is a void method that takes the objects stream count, add it to this.streamCount and divide it by two. It takes the average of both stream counts
 	 * -> A compareTo(Song obj) to compare object for insertion of objects in BST
